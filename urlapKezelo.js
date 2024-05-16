@@ -1,3 +1,4 @@
+import { postAdat } from "./aszinkron.js"
 import { init } from "./main.js"
 export function adatokListaba(lista) {
     /* összegyűjti az űrlapról az adatokat */
@@ -28,7 +29,7 @@ export function adatokListaba(lista) {
         console.log(validELEMEK.eq(0).css("display"))
 
         if (validELEMEK.eq(0).css("display")==="block" && validELEMEK.eq(1).css("display")==="block" ) {
-             lista.push(adat)          
+             postAdat("http://localhost:3000/emberekLISTA",adat)          
             init(lista)
         }
 

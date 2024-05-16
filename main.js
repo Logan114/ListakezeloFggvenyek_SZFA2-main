@@ -1,4 +1,5 @@
-import { emberekLISTA } from "./adat.js";
+//import { emberekLISTA } from "./adat.js";
+import { deleteAdat, getAdat } from "./aszinkron.js";
 import { sorTorles, szuresNevSzerint, tablazatRendez } from "./adatKezelo.js";
 import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
 import { adatokListaba } from "./urlapKezelo.js";
@@ -22,16 +23,17 @@ Ezután megjelenítjük a szűrt listát az oldalon.
 Akkor fog lefutni, amikor megváltozik a szűrőmező tartalma 
  
  */
+getAdat("http://localhost:3000/emberekLISTA",init)
 let nevIrany = 1;
-init(emberekLISTA);
+//init(emberekLISTA);
 nevSzuresEsemeny();
 
-adatokListaba(emberekLISTA)
 
 export function init(lista) {
   let txt = tablazatOsszeallit(lista);
   megjelenites(txt);
   nevRendezEsemeny(lista);
+  adatokListaba(lista)
   sorTorlesEsemeny()
 }
 
@@ -63,9 +65,8 @@ function sorTorlesEsemeny() {
   /* minden sor végén legyen egy kuka, a sor indexével, erre a kukára kattintva töröljük az adott sort a listából, és újra megjelenítjük a táblázatot a módosult listával.   */
   const kukaELEM = $(".kuka");
   kukaELEM.on("click", function (event) {
-    let index = event.target.id; /*  az aktuális kuka indexe */
-    const LISTA = sorTorles(emberekLISTA,index);
-    console.log(LISTA)
+    let id = event.target.id; /*  az aktuális kuka indexe */
+    deleteAdat("http://localhost:3000/emberekLISTA",id)
     init(LISTA);
   });
 }

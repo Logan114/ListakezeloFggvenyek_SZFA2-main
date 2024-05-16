@@ -1,0 +1,58 @@
+{
+  "emberekLISTA": [
+    {
+      "nev": "Éva",
+      "kor": 12,
+      "nem": true,
+      "id": "0"
+    },
+    {
+      "nev": "Ádám",
+      "kor": 42,
+      "nem": false,
+      "id": "1"
+    },
+    {
+      "nev": "Dani",
+      "kor": 78,
+      "nem": false,
+      "id": "2"
+    },
+    {
+      "nev": "béla",
+      "kor": 72,
+      "nem": false,
+      "id": "3"
+    },
+    {
+      "nev": "Ádám",
+      "kor": 62,
+      "nem": false,
+      "id": "4"
+    },
+    {
+      "nev": "Ádám",
+      "kor": 82,
+      "nem": false,
+      "id": "5"
+    },
+    {
+      "nev": "Jenő",
+      "kor": 32,
+      "nem": false,
+      "id": "8"
+    },
+    {
+      "nev": "Aaa",
+      "kor": "3",
+      "nem": true,
+      "id": "61a7"
+    },
+    {
+      "id": "a574",
+      "nev": "TheCrab",
+      "kor": "120",
+      "nem": false
+    }
+  ]
+}
